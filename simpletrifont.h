@@ -90,20 +90,21 @@ fontx[][23] = ;	fonty[][23] = ;
 fontx[][24] = ;	fonty[][24] = ;
 fontx[][25] = ;	fonty[][25] = ;
 */
-	t0 = y2 + (fydim - y2) * 0.5f;
-	fontx[40][0] = fxdim - xangle;	fonty[40][0] = fydim;	//	right arrow
+	t0 = y2 + (fydim - y2) * 0.5f;	//	y of point .. halfway between fydim and y2
+	slope = (t0 - fydim) / (x5 - xangle);	slope = ywidth / slope;
+	fontx[40][0] = fxdim - xangle - slope;	fonty[40][0] = fydim;	//	right arrow
 	fontx[40][1] = x5 - xangle;		fonty[40][1] = fydim;
-	fontx[40][2] = x2;		fonty[40][2] = t0;
+	fontx[40][2] = x2 - slope;		fonty[40][2] = t0;
 	fontx[40][3] = 0.f;	fonty[40][3] = t0;
-	fontx[40][4] = fxdim - xangle;	fonty[40][4] = y2;
+	fontx[40][4] = fxdim - xangle - slope;	fonty[40][4] = y2;
 	fontx[40][5] = x5 - xangle;		fonty[40][5] = y2;
 
 	fontx[39][0] = x2 + xangle;		fonty[39][0] = fydim;	//	left arrow
-	fontx[39][1] = 0.f + xangle;	fonty[39][1] = fydim;
+	fontx[39][1] = 0.f + xangle + slope;	fonty[39][1] = fydim;
 	fontx[39][2] = fxdim;	fonty[39][2] = t0;
-	fontx[39][3] = x5;		fonty[39][3] = t0;
+	fontx[39][3] = x5 + slope;		fonty[39][3] = t0;
 	fontx[39][4] = x2 + xangle;		fonty[39][4] = y2;
-	fontx[39][5] = 0.f + xangle;	fonty[39][5] = y2;
+	fontx[39][5] = 0.f + xangle + slope;	fonty[39][5] = y2;
 
 	fontx[38][0] = 0.f + xinside;	fonty[38][0] = yc1;	//	dash
 	fontx[38][1] = 0.f + xinside;	fonty[38][1] = yc0;
